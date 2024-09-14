@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header section with background image -->
     <header>
         <div class="container">
             <h1>Plumbing & Wiring Services</h1>
@@ -30,16 +31,42 @@
         </div>
     </section>
 
+    <!-- Services section with sliding images -->
     <section id="services" class="section">
         <div class="container">
             <h2>Our Services</h2>
             <div class="services-grid">
+                <!-- Plumbing Services with image slider -->
                 <div class="service-box">
                     <h3>Plumbing Services</h3>
+                    <div class="slider" id="plumbing-slider">
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/400x250?text=Plumbing+Image+1" alt="Plumbing Service 1">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/400x250?text=Plumbing+Image+2" alt="Plumbing Service 2">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/400x250?text=Plumbing+Image+3" alt="Plumbing Service 3">
+                        </div>
+                    </div>
                     <p>We handle all types of plumbing jobs including leak repairs, pipe installations, and more.</p>
                 </div>
+
+                <!-- Wiring Services with image slider -->
                 <div class="service-box">
                     <h3>Wiring Services</h3>
+                    <div class="slider" id="wiring-slider">
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/400x250?text=Wiring+Image+1" alt="Wiring Service 1">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/400x250?text=Wiring+Image+2" alt="Wiring Service 2">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/400x250?text=Wiring+Image+3" alt="Wiring Service 3">
+                        </div>
+                    </div>
                     <p>We offer electrical wiring services, panel upgrades, lighting installations, and troubleshooting.</p>
                 </div>
             </div>
@@ -68,5 +95,7 @@
             <p>&copy; 2024 Plumbing & Wiring Services | Designed by YourName</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
