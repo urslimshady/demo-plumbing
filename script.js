@@ -4,9 +4,9 @@ let wiringIndex = 0;
 function showSlides(sliderId, index) {
     let slides = document.querySelectorAll(`#${sliderId} .slide`);
     for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove('active');
+        slides[i].style.display = "none";  // Hide all slides
     }
-    slides[index].classList.add('active');
+    slides[index].style.display = "block";  // Show the current slide
 }
 
 function slidePlumbing() {
@@ -17,4 +17,14 @@ function slidePlumbing() {
 
 function slideWiring() {
     let wiringSlides = document.querySelectorAll("#wiring-slider .slide");
-    wiringIndex = (wiringIndex + 
+    wiringIndex = (wiringIndex + 1) % wiringSlides.length;
+    showSlides('wiring-slider', wiringIndex);
+}
+
+// Initializing the slides
+showSlides('plumbing-slider', plumbingIndex);
+showSlides('wiring-slider', wiringIndex);
+
+// Auto slide every 3 seconds
+setInterval(slidePlumbing, 3000);
+setInterval(slideWiring, 3000);
