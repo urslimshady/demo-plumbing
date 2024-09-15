@@ -110,30 +110,53 @@ nav a:hover {
     text-align: center;
 }
 
-/* Image slider styling */
-.slider {
+/* Full-width image slider */
+.service-slider {
+    width: 100%;
     position: relative;
-    max-width: 400px;
-    margin: 0 auto 20px;
     overflow: hidden;
+    margin-bottom: 40px;
 }
 
-.slide {
-    display: none;
-    transition: opacity 0.5s ease-in-out;
+.slider-container {
+    display: flex;
+    width: 400%; /* Each slide will take 100% */
+    transition: transform 0.5s ease-in-out;
 }
 
-.active {
-    display: block;
-    opacity: 1;
+.slider-container .slide {
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
-.slide img {
+.slider-container img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
+/* Slider Controls (Dots) */
+.slider-controls {
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider-controls .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.slider-controls .dot.active {
+    background-color: #717171;
+}
 
 /* Footer styling */
 footer {
