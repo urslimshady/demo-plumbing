@@ -113,6 +113,7 @@ nav a:hover {
 /* Full-width image slider */
 .service-slider {
     width: 100%;
+    max-width: 100%;  /* Ensure the slider takes up full width */
     position: relative;
     overflow: hidden;
     margin-bottom: 40px;
@@ -131,7 +132,9 @@ nav a:hover {
 
 .slider-container img {
     width: 100%;
-    height: auto;
+    height: auto; /* Make the image responsive */
+    max-height: 60vh; /* Keep the aspect ratio while limiting height for better viewing */
+    object-fit: cover; /* Ensure the image covers the container without distorting */
     border-radius: 10px;
 }
 
@@ -186,5 +189,9 @@ footer p {
 
     .section h2 {
         font-size: 2rem;
+    }
+
+    .slider-container img {
+        max-height: 50vh; /* Reduce height further on smaller screens */
     }
 }
