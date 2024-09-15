@@ -1,30 +1,30 @@
-let plumbingIndex = 0;
-let wiringIndex = 0;
+let currentSlideIndex = 0;
 
-function showSlides(sliderId, index) {
-    let slides = document.querySelectorAll(`#${sliderId} .slide`);
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  // Hide all slides
-    }
-    slides[index].style.display = "block";  // Show the current slide
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slider-container .slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Loop back to the beginning if we reach the end
+    if (index >= slides.length) currentSlideIndex = 0;
+    if (index < 0) currentSlideIndex = slides.length - 1;
+    
+    // Hide all slides and remove 'active' class from dots
+    slides.forEach(slide => slide.style.transform = `translateX(-${100 * currentSlideIndex}%)`);
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Show the current slide and set the corresponding dot to active
+    dots[currentSlideIndex].classList.add('active');
 }
 
-function slidePlumbing() {
-    let plumbingSlides = document.querySelectorAll("#plumbing-slider .slide");
-    plumbingIndex = (plumbingIndex + 1) % plumbingSlides.length;
-    showSlides('plumbing-slider', plumbingIndex);
+function nextSlide() {
+    currentSlideIndex++;
+    showSlide(currentSlideIndex);
 }
 
-function slideWiring() {
-    let wiringSlides = document.querySelectorAll("#wiring-slider .slide");
-    wiringIndex = (wiringIndex + 1) % wiringSlides.length;
-    showSlides('wiring-slider', wiringIndex);
+function currentSlide(index) {
+    currentSlideIndex = index;
+    showSlide(currentSlideIndex);
 }
 
-// Initializing the slides
-showSlides('plumbing-slider', plumbingIndex);
-showSlides('wiring-slider', wiringIndex);
-
-// Auto slide every 3 seconds
-setInterval(slidePlumbing, 3000);
-setInterval(slideWiring, 3000);
+// Automatic slide every 5 seconds
+setInterval(nextSlide, 5000);
