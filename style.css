@@ -111,7 +111,6 @@ nav a:hover {
 }
 
 /* Full-width image slider */
-/* Full-width image slider */
 .service-slider {
     width: 100%;
     max-width: 100%;
@@ -134,8 +133,8 @@ nav a:hover {
 
 .slider-container img {
     width: 100%;
-    max-height: 50vh; /* Reduce height further */
-    object-fit: cover; /* Make sure the image covers the space without distortion */
+    max-height: 40vh; /* Reduce height further for larger screens */
+    object-fit: cover; /* Ensure the image covers without distortion */
     border-radius: 10px;
 }
 
@@ -168,4 +167,3 @@ nav a:hover {
         max-height: 30vh; /* Further reduce image height on mobile screens */
     }
 }
-
