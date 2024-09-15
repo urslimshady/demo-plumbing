@@ -3,28 +3,42 @@ let currentSlideIndex = 0;
 function showSlide(index) {
     const slides = document.querySelectorAll('.slider-container .slide');
     const dots = document.querySelectorAll('.dot');
-    
+    const totalSlides = slides.length;
+
     // Loop back to the beginning if we reach the end
-    if (index >= slides.length) currentSlideIndex = 0;
-    if (index < 0) currentSlideIndex = slides.length - 1;
-    
-    // Hide all slides and remove 'active' class from dots
-    slides.forEach(slide => slide.style.transform = `translateX(-${100 * currentSlideIndex}%)`);
+    currentSlideIndex = (index + totalSlides) % totalSlides;  // Circular navigation
+
+    // Adjust the slider container position
+    const sliderContainer = document.querySelector('.slider-container');
+    sliderContainer.style.transform = `translateX(-${100 * currentSlideIndex}%)`;
+
+    // Update dot navigation
     dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Show the current slide and set the corresponding dot to active
     dots[currentSlideIndex].classList.add('active');
 }
 
 function nextSlide() {
-    currentSlideIndex++;
-    showSlide(currentSlideIndex);
+    showSlide(currentSlideIndex + 1);
 }
 
 function currentSlide(index) {
-    currentSlideIndex = index;
-    showSlide(currentSlideIndex);
+    showSlide(index);
 }
 
 // Automatic slide every 5 seconds
-setInterval(nextSlide, 5000);
+const slideInterval = setInterval(nextSlide, 5000);
+
+// Pause the slideshow on mouse hover
+document.querySelector('.service-slider').addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+});
+
+// Resume the slideshow when mouse leaves
+document.querySelector('.service-slider').addEventListener('mouseleave', () => {
+    setInterval(nextSlide, 5000);
+});
+
+// Initialize the slider on page load
+document.addEventListener('DOMContentLoaded', function () {
+    showSlide(currentSlideIndex);  // Show the first slide initially
+});
