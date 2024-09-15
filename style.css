@@ -111,17 +111,19 @@ nav a:hover {
 }
 
 /* Full-width image slider */
+/* Full-width image slider */
 .service-slider {
     width: 100%;
-    max-width: 100%;  /* Ensure the slider takes up full width */
+    max-width: 100%;
     position: relative;
     overflow: hidden;
     margin-bottom: 40px;
+    height: auto; /* Let the height adjust dynamically */
 }
 
 .slider-container {
     display: flex;
-    width: 400%; /* Each slide will take 100% */
+    width: 400%;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -132,9 +134,8 @@ nav a:hover {
 
 .slider-container img {
     width: 100%;
-    height: auto; /* Make the image responsive */
-    max-height: 60vh; /* Keep the aspect ratio while limiting height for better viewing */
-    object-fit: cover; /* Ensure the image covers the container without distorting */
+    max-height: 50vh; /* Reduce height further */
+    object-fit: cover; /* Make sure the image covers the space without distortion */
     border-radius: 10px;
 }
 
@@ -161,37 +162,10 @@ nav a:hover {
     background-color: #717171;
 }
 
-/* Footer styling */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-}
-
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .services-grid {
-        flex-direction: column;
-    }
-    
-    .service-box {
-        width: 100%;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
     .slider-container img {
-        max-height: 50vh; /* Reduce height further on smaller screens */
+        max-height: 30vh; /* Further reduce image height on mobile screens */
     }
 }
+
