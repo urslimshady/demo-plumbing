@@ -4,14 +4,14 @@ header {
     background-size: cover;
     background-position: center;
     padding: 100px 0;
-    color: white; /* Ensures text is visible on background */
-    text-align: center; /* Centers text for a professional layout */
+    color: white;
+    text-align: center;
 }
 
 header h1 {
     font-size: 2.5rem;
-    font-weight: 600; /* Slightly bolder for emphasis */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow to increase text readability */
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
 
@@ -23,9 +23,9 @@ header p {
 /* Carousel image styles */
 .carousel-inner img {
     object-fit: cover;
-    height: 50vh; /* Control height for images */
-    width: 100%; /* Ensures images fill the container */
-    border-radius: 10px; /* Smooths corners of the images */
+    height: 50vh; /* Control height for images on larger screens */
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* Footer styling */
@@ -40,18 +40,18 @@ footer {
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem; /* Slightly smaller text for mobile */
+        font-size: 2rem;
     }
 
     header p {
-        font-size: 1rem; /* Adjust paragraph font size for readability */
+        font-size: 1rem;
     }
 
     .carousel-inner img {
-        height: 30vh; /* Reduce image height for smaller screens */
+        height: 40vh; /* Increase image height for mobile to make it more visible */
     }
     
     footer {
-        font-size: 0.8rem; /* Reduce footer text size for mobile */
+        font-size: 0.8rem;
     }
 }
