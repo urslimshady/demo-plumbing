@@ -48,7 +48,7 @@ footer {
     }
 
     .carousel-inner img {
-        height: 40vh; /* Increase image height for mobile to make it more visible */
+        height: 50vh; /* Increase image height for mobile to make it more visible */
     }
     
     footer {
